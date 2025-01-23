@@ -1,0 +1,224 @@
+{
+  "questions": [
+    {
+      "question": "Qual desses motores é conhecido por ter um som característico de 'rotação alta'?",
+      "options": [
+        "V8 Flat-plane",
+        "V12",
+        "Boxer 4",
+        "Inline-6"
+      ],
+      "correctAnswer": "V8 Flat-plane",
+      "difficulty":"hard"
+    },
+    {
+      "question": "Qual é o principal benefício de um motor turboalimentado?",
+      "options": [
+        "Maior eficiência de combustível",
+        "Som mais alto",
+        "Maior torque em baixas rotações",
+        "Menos peso"
+      ],
+      "correctAnswer": "Maior torque em baixas rotações",
+      "difficulty":"medium"
+    },
+    {
+      "question": "Qual dos seguintes tipos de tração oferece melhor aderência em todas as condições climáticas?",
+      "options": [
+        "Tração traseira (RWD)",
+        "Tração dianteira (FWD)",
+        "Tração nas quatro rodas (AWD)",
+        "Tração integral (4WD)"
+      ],
+      "correctAnswer": "Tração nas quatro rodas (AWD)",
+      "difficulty":"easy"
+    },
+    {
+      "question": "Qual configuração de motor é mais comum em carros esportivos devido ao baixo centro de gravidade?",
+      "options": [
+        "Inline-4",
+        "Boxer",
+        "V8",
+        "Inline-6"
+      ],
+      "correctAnswer": "Boxer",
+      "difficulty":"easy"
+    },
+    {
+      "question": "Qual dos seguintes motores é considerado mais eficiente em termos de consumo de combustível?",
+      "options": [
+        "Motor de ciclo Otto",
+        "Motor Diesel",
+        "Motor Wankel",
+        "Motor V12"
+      ],
+      "correctAnswer": "Motor Diesel",
+      "difficulty":"easy"
+    },
+    {
+      "question": "O que significa a sigla 'DOHC' em um motor?",
+      "options": [
+        "Double Overhead Carburetor",
+        "Dual Overdrive Control",
+        "Double Overhead Camshaft",
+        "Direct Overheat Cooling"
+      ],
+      "correctAnswer": "Double Overhead Camshaft",
+      "difficulty":"medium"
+    },
+    {
+      "question": "Qual é a principal vantagem de um motor Boxer sobre um motor em linha?",
+      "options": [
+        "Mais torque",
+        "Menor vibração",
+        "Mais leve",
+        "Menor custo de produção"
+      ],
+      "correctAnswer": "Menor vibração",
+      "difficulty":"medium"
+    },
+    {
+      "question": "Qual dos seguintes sistemas é usado para reduzir as emissões de NOx em motores Diesel?",
+      "options": [
+        "Catalisador de Três Vias",
+        "AdBlue (SCR)",
+        "Filtro de Partículas",
+        "Válvula EGR"
+      ],
+      "correctAnswer": "AdBlue (SCR)",
+      "difficulty":"medium"
+    },
+    {
+      "question": "Qual dos seguintes tipos de suspensão é mais usado em carros esportivos de alto desempenho?",
+      "options": [
+        "Suspensão McPherson",
+        "Suspensão Multilink",
+        "Suspensão de Feixe Rígido",
+        "Suspensão de Molas Helicoidais"
+      ],
+      "correctAnswer": "Suspensão Multilink",
+      "difficulty":"easy"
+    },
+    {
+      "question": "Qual é a função principal de um intercooler em um motor turbo?",
+      "options": [
+        "Resfriar o óleo do motor",
+        "Resfriar o ar comprimido",
+        "Aumentar a pressão do turbo",
+        "Reduzir o consumo de combustível"
+      ],
+      "correctAnswer": "Resfriar o ar comprimido",
+      "difficulty":"easy"
+    },
+    {
+      "question": "Qual o nome do componente responsável por controlar a quantidade de ar que entra no motor?",
+      "options": [
+        "Válvula de Admissão",
+        "Borboleta de Aceleração",
+        "Turbina",
+        "Válvula Wastegate"
+      ],
+      "correctAnswer": "Borboleta de Aceleração",
+      "difficulty":"easy"
+    },
+    {
+      "question": "Qual das seguintes opções caracteriza um motor com configuração 'V'?",
+      "options": [
+        "Cilindros dispostos em linha reta",
+        "Cilindros dispostos em forma de V",
+        "Cilindros dispostos horizontalmente",
+        "Cilindros dispostos em círculo"
+      ],
+      "correctAnswer": "Cilindros dispostos em forma de V",
+      "difficulty":"easy"
+    },
+    {
+      "question": "O que é um 'supercharger'?",
+      "options": [
+        "Um dispositivo que resfria o motor",
+        "Um compressor movido por correia para aumentar a pressão do ar de admissão",
+        "Um tipo de turbo que funciona com gases de escape",
+        "Um sistema de ignição eletrônica"
+      ],
+      "correctAnswer": "Um compressor movido por correia para aumentar a pressão do ar de admissão",
+      "difficulty":"easy"
+    },
+    {
+      "question": "Qual a principal diferença entre AWD e 4WD?",
+      "options": [
+        "AWD é tração dianteira e 4WD é tração traseira",
+        "AWD é sempre ativo, enquanto 4WD pode ser ativado ou desativado",
+        "AWD é usado para corrida, 4WD para off-road",
+        "Não há diferença entre eles"
+      ],
+      "correctAnswer": "AWD é sempre ativo, enquanto 4WD pode ser ativado ou desativado",
+      "difficulty":"easy"
+    },
+    {
+      "question": "Qual das seguintes tecnologias reduz o consumo de combustível desligando o motor em paradas?",
+      "options": [
+        "Start-Stop",
+        "Turbo Lag",
+        "Overdrive",
+        "Idle Control"
+      ],
+      "correctAnswer": "Start-Stop",
+      "difficulty":"easy"
+    },
+    {
+      "question": "Qual é a principal característica de um motor VTEC?",
+      "options": [
+        "Uso de dois turbos em série",
+        "Sistema de comando de válvulas variável",
+        "Injeção direta de combustível",
+        "Sistema de arrefecimento aprimorado"
+      ],
+      "correctAnswer": "Sistema de comando de válvulas variável",
+      "difficulty":"medium"
+    },
+    {
+      "question": "Qual das seguintes peças é responsável por conectar o pistão ao virabrequim?",
+      "options": [
+        "Biela",
+        "Cabeçote",
+        "Válvula de Escape",
+        "Válvula de Admissão"
+      ],
+      "correctAnswer": "Biela",
+      "difficulty":"easy"
+    },
+    {
+      "question": "Qual dos seguintes sistemas reduz o turbo lag em um motor turboalimentado?",
+      "options": [
+        "Turbo Twin-scroll",
+        "Sistema Start-Stop",
+        "Injeção de Óxido Nitroso",
+        "Sistema Overdrive"
+      ],
+      "correctAnswer": "Turbo Twin-scroll",
+      "difficulty":"hard"
+    },
+    {
+      "question": "Qual dos seguintes tipos de câmbio é conhecido por trocar marchas sem interrupção?",
+      "options": [
+        "Câmbio Manual",
+        "Câmbio CVT",
+        "Câmbio Dual Clutch",
+        "Câmbio Automático Convencional"
+      ],
+      "correctAnswer": "Câmbio CVT",
+      "difficulty":"medium"
+    },
+    {
+      "question": "Qual dos seguintes fluidos é essencial para o bom funcionamento de um motor a combustão?",
+      "options": [
+        "Fluido de Freio",
+        "Óleo do Motor",
+        "Refrigerante",
+        "Água do Radiador"
+      ],
+      "correctAnswer": "Óleo do Motor",
+      "difficulty":"easy"
+    }
+  ]
+}

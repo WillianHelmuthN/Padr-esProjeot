@@ -1,0 +1,120 @@
+import json
+from tkinter import Tk, Label, Button, Radiobutton, StringVar
+
+class Question:
+    def __init__(self, text, options, correct_answer, difficulty):
+        self.text = text
+        self.options = options
+        self.correct_answer = correct_answer
+        self.difficulty = difficulty
+    
+    @staticmethod
+    def from_dict(data):
+        return Question(data['question'], data['options'], data['correctAnswer'], data['difficulty'])
+
+class QuestionParser:
+    @staticmethod
+    def load_questions_from_json(path):
+        with open(path, 'r') as file:
+            data = json.load(file)
+        return [Question.from_dict(q) for q in data['questions']]
+
+class ScoreManager:
+    _instance = None
+    
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super(ScoreManager, cls).__new__(cls)
+            cls._instance.score = 0
+        return cls._instance
+    
+    def update_score(self, correct):
+        if correct:
+            self.score += 1
+
+    def get_final_score(self):
+        return self.score
+
+class QuizManager:
+    _instance = None
+
+    def __init__(self):
+        if QuizManager._instance is not None:
+            raise Exception("Use get_instance() para acessar o QuizManager.")
+        self.questions = []
+        QuizManager._instance = self
+
+    @staticmethod
+    def get_instance():
+        if QuizManager._instance is None:
+            QuizManager()
+        return QuizManager._instance
+
+    def load_questions_from_json(self, json_file):
+        self.questions = QuestionParser.load_questions_from_json(json_file)
+
+    def add_question(self, question):
+        if isinstance(question, Question):
+            self.questions.append(question)
+        else:
+            raise TypeError("A pergunta deve ser uma instância da classe Question.")
+
+    def get_question(self, index):
+        if 0 <= index < len(self.questions):
+            return self.questions[index]
+        else:
+            raise IndexError("Índice de pergunta fora do intervalo.")
+
+class UIController:
+    def __init__(self, questions):
+        self.window = Tk()  # Inicializa a janela principal aqui
+        self.questions = questions
+        self.current_question_index = 0
+        self.user_answer = StringVar(self.window)  # Associa a variável à janela principal
+        self.score_manager = ScoreManager()
+        self.window.title("Quiz App")
+        self.question_label = Label(self.window, text="")
+        self.question_label.pack()
+        self.options_buttons = []
+        
+        for i in range(4):
+            btn = Radiobutton(self.window, text="", variable=self.user_answer, value=str(i))
+            btn.pack()
+            self.options_buttons.append(btn)
+        
+        self.submit_button = Button(self.window, text="Responder", command=self.check_answer)
+        self.submit_button.pack()
+
+    def show_question(self):
+        if self.current_question_index < len(self.questions):
+            question = self.questions[self.current_question_index]
+            self.question_label.config(text=question.text)
+            for i, option in enumerate(question.options):
+                self.options_buttons[i].config(text=option, value=option)
+        else:
+            self.show_results()
+
+    def check_answer(self):
+        question = self.questions[self.current_question_index]
+        correct = self.user_answer.get() == question.correct_answer
+        self.score_manager.update_score(correct)
+        self.current_question_index += 1
+        self.show_question()
+
+    def show_results(self):
+        score = self.score_manager.get_final_score()
+        self.question_label.config(text=f"Quiz finalizado! Pontuação: {score}")
+        for btn in self.options_buttons:
+            btn.pack_forget()
+        self.submit_button.pack_forget()
+    
+    def start(self):
+        self.show_question()
+        self.window.mainloop()
+
+# Main (Controlador)
+if __name__ == "__main__":
+    quiz_manager = QuizManager.get_instance()
+    quiz_manager.load_questions_from_json('questions.json')
+    app = UIController(quiz_manager.questions)
+    app.start()
