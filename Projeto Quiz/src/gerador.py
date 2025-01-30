@@ -5,8 +5,9 @@ gerenciar a pontuação e controlar a interface gráfica do usuário.
 """
 
 import json
-from tkinter import Tk, Label, Button, Radiobutton, StringVar
+from tkinter import Tk, Label, Button, Radiobutton, StringVar, Frame
 
+#Factory Method
 class Question:
     """Classe para representar uma pergunta."""
     def __init__(self, text, options, correct_answer, difficulty):
@@ -19,6 +20,7 @@ class Question:
     def from_dict(data):
         return Question(data['question'], data['options'], data['correctAnswer'], data['difficulty'])
 
+#Template Method
 class QuestionParser:
     """Classe para carregar perguntas de um arquivo JSON."""
     @staticmethod
@@ -27,6 +29,7 @@ class QuestionParser:
             data = json.load(file)
         return [Question.from_dict(q) for q in data['questions']]
 
+#Singleton
 class ScoreManager:
     """Classe que lida com o Score"""
     _instance = None
@@ -46,6 +49,7 @@ class ScoreManager:
     def get_final_score(self):
         return self.score
 
+#Singleton
 class QuizManager:
     """Classe para gerenciar perguntas do quiz."""
     _instance = None
@@ -77,19 +81,26 @@ class QuizManager:
         else:
             raise IndexError("Índice de pergunta fora do intervalo.")
 
+#MVC
 class UIController:
     """Classe para controlar a interface gráfica do usuário."""
     def __init__(self, questions):
-        self.window = Tk()  # Inicializa a janela principal aqui
+        self.window = Tk()q
+        self.window.geometry("800x260")
         self.questions = questions
         self.current_question_index = 0
-        self.user_answer = StringVar(self.window)  # Associa a variável à janela principal
+        self.user_answer = StringVar(self.window)
         self.score_manager = ScoreManager()
         self.window.title("Quiz App")
         self.question_label = Label(self.window, text="")
         self.question_label.pack()
         self.options_buttons = []
-        
+
+        self.frame = Frame(self.window)
+        self.frame.pack(expand=True)
+
+        self.question_label = Label(self.frame, text="")
+        self.question_label.pack(pady=20)
         for i in range(4):
             btn = Radiobutton(self.window, text="", variable=self.user_answer, value=str(i))
             btn.pack()
