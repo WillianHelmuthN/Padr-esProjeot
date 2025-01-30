@@ -1,7 +1,8 @@
-import tkinter as tk
+"""Main do projeto"""
 from gerador import QuizManager, UIController
 
 def start_quiz():
+    """Inicia o quiz."""
     quiz_manager = QuizManager.get_instance()
     quiz_manager.load_questions_from_json("questions.json")
     print(f"Total de perguntas carregadas: {len(quiz_manager.questions)}")
